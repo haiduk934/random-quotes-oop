@@ -25,27 +25,29 @@ class RandomQuotesApp {
     }
   }
 
-  getRandomQuote() {
+  randomQuoteHandler() {
     const randomQuote = RandomeQuote.getRandomQuote();
     this.changeCurrentQuote(randomQuote);
   }
 
-  // getRandomQuoteViaAPI() {
+  // randomQuoteViaAPIHandler() {
   //   RandomeQuote.getRandomQuoteViaAPI().then((quote) => {
   //     this.changeCurrentQuote(quote);
   //   });
   // }
 
-  async getRandomQuoteViaAPI() {
-    this.changeCurrentQuote(await RandomeQuote.getRandomQuoteViaAPI());
+  async randomQuoteViaAPIHandler() {
     // const quoteViaAPI = await RandomeQuote.getRandomQuoteViaAPI();
     // this.changeCurrentQuote(quoteViaAPI);
+    this.changeCurrentQuote(await RandomeQuote.getRandomQuoteViaAPI());
   }
 
   init() {
-    this.randomQuoteBtn.addEventListener("click", () => this.getRandomQuote());
+    this.randomQuoteBtn.addEventListener("click", () =>
+      this.randomQuoteHandler(),
+    );
     this.randomQuoteAPIBtn.addEventListener("click", () =>
-      this.getRandomQuoteViaAPI(),
+      this.randomQuoteViaAPIHandler(),
     );
   }
 }
