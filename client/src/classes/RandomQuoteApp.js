@@ -30,12 +30,6 @@ class RandomQuotesApp {
     this.changeCurrentQuote(randomQuote);
   }
 
-  // randomQuoteViaAPIHandler() {
-  //   RandomeQuote.getRandomQuoteViaAPI().then((quote) => {
-  //     this.changeCurrentQuote(quote);
-  //   });
-  // }
-
   async randomQuoteViaAPIHandler() {
     // const quoteViaAPI = await RandomeQuote.getRandomQuoteViaAPI();
     // this.changeCurrentQuote(quoteViaAPI);

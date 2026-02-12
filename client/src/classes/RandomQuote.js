@@ -16,9 +16,10 @@ class RandomeQuote {
    * 3.Result of the "fulfuled" promise will be either Quote or undefined
    * 4.Therefore there is no need for try/catch block where we call this function
    */
+
   static async getRandomQuoteViaAPI() {
     const url = "https://quoteslate.vercel.app/api/quotes/random";
-    const options = { headers: { "Content-Type": "applications/json" } };
+    const options = { headers: { "Content-Type": "application/json" } };
     try {
       const response = await fetch(url, options);
       const data = await response.json();
@@ -33,16 +34,6 @@ class RandomeQuote {
        */
     }
   }
-
-  // static getRandomQuoteViaAPI() {
-  //   const url = "https://quoteslate.vercel.app/api/quotes/random";
-  //   const options = { headers: { "Content-Type": "applications/json" } };
-
-  //   return fetch(url, options)
-  //     .then((response) => response.json())
-  //     .then(({ id, quote, author }) => new Quote(id, quote, author))
-  //     .catch((error) => console.error(error));
-  // }
 }
 
 export default RandomeQuote;
